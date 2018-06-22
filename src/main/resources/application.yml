@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dbgirl?characterEncoding=utf-8
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    #升级到Springboot2.0后，依然是使用jpa、Hibernate来操作mysql，
+    #发现Hibernate默认创建的表是myisam引擎，而不是innodb。
+    #添加下面的方言即可修改为innodb
+
+    #发现Hibernate默认创建的表是MyISAM引擎，MyISAM引擎不支持事务操作，
+    #所以@Transaction注解不会起作用；所以我们要做的就是，在配置文件中添加配置，将数据库引擎改为InnoDB
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect   #不加这句则默认为myisam引擎
