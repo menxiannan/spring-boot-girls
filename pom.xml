@@ -44,6 +44,15 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
+
+        <!--<dependency>-->
+            <!--<groupId>com.gitee.sunchenbin.mybatis.actable</groupId>-->
+            <!--<artifactId>mybatis-enhance-actable</artifactId>-->
+            <!--<version>1.0.3</version>-->
+        <!--</dependency>-->
+
+
     </dependencies>
 
     <build>
